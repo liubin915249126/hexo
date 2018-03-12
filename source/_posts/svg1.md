@@ -5,7 +5,10 @@
 > 
 #### SVG viewBox
 >
-<svg width="500" height="300"></svg>
+```
+  <svg width="500" height="300"></svg>
+```
+
 viewport svg 实际大小
 </br>
 viewBox="x, y, width, height"  // x:左上角横坐标，y:左上角纵坐标，width:宽度，height:高度
@@ -24,6 +27,7 @@ preserveAspectRatio()
 参考文章 [张鑫旭](http://www.zhangxinxu.com/wordpress/2014/08/svg-viewport-viewbox-preserveaspectratio/)
 >
 #### 渐变
+
 ##### 线性渐变
 >
 先定义再引用
@@ -56,7 +60,9 @@ spreadMethod属性
   repeat: 重复渐变图案，从起点->终点，直到空间填满。
 ```
 >
+
 ##### 径向渐变
+
 >
 先定义再引用
 ``` 
@@ -82,10 +88,11 @@ gradientUnit属性和spreadMethod属性类似于线性渐变
 焦点：
 ![focus](https://github.com/liubin915249126/HTML-CSS-SVG/blob/master/SVG/image/SVG_Radial_Grandient_Focus.png)
 
->
+
 
 #### 基本形状
->
+
+
 ```
 矩形 rect:   x:矩形左上角的x坐标  
             y:矩形左上角的y坐标  
@@ -107,36 +114,44 @@ gradientUnit属性和spreadMethod属性类似于线性渐变
 多边形 polygon points各个点的坐标
 ```                                                      
 >
+
 #### path基本相关属性
->
-```
+
+
+``` html
    fill //填充(线条包裹的区间)颜色 
    stroke //定义一条线，文本或元素轮廓颜色 
    stroke-width //定义一条线，文本或元素轮廓厚度
    stroke-linecap //butt | round | square | inherit
 ```  
->
+
+
 #### stroke-dasharray,stroke-dashoffset
->
-```
+
+
+
+``` html
 stroke-dasharray:绘制虚线:一个参数时： 表示一段虚线长度和每段虚线之间的间距 
                           两个参数或者多个参数时：一个表示长度，一个表示间距 
 stroke-dashoffset: 表示虚线的起始偏移                     
 ```
->
+
+
 #### path d 路径相关
->
-直线命令：
-```
+
+
+
+##### 直线命令：
+``` js
    M:将画笔移动 M10,10(两个参数)
    H:画水平线 H100(一个参数)
    V:画竖直线 V100(一个参数)
    Z:闭合(无参数)
+   以上命令大写表示绝对位置(明确的坐标)，小写表示相对坐标(相对于前一个点的坐标)
 ``` 
-以上命令大写表示绝对位置(明确的坐标)，小写表示相对坐标(相对于前一个点的坐标)
+##### 曲线命令：
 
-曲线命令：
-```
+``` js
   C 三次贝塞尔曲线 x1 y1, x2 y2, x y (or c dx1 dy1, dx2 dy2, dx dy)
     x1 y1, x2 y2 两个不同的控制点
     x y 终点
@@ -168,11 +183,9 @@ stroke-dashoffset: 表示虚线的起始偏移
 
 二次贝塞尔曲线Q:![二次贝塞尔曲线](https://github.com/liubin915249126/HTML-CSS-SVG/blob/master/SVG/image/Quadratic_Bezier.png)
 二次贝塞尔曲线T:![二次贝塞尔曲线](https://github.com/liubin915249126/HTML-CSS-SVG/blob/master/SVG/image/Shortcut_Quadratic_Bezier.png)
->
 
->
-弧线命令A：
-```
+##### 弧线命令A：
+``` html
    <svg width="325px" height="325px" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <path d="M80 80
               A 45 45, 0, 0, 0, 125 125
@@ -193,7 +206,8 @@ stroke-dashoffset: 表示虚线的起始偏移
 
 
 参考文档[MDN](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Paths);
->
+
+
 #### 应用
 ![半圆](https://github.com/liubin915249126/HTML-CSS-SVG/blob/master/SVG/image/half.gif)
 ![loading](https://github.com/liubin915249126/HTML-CSS-SVG/blob/master/SVG/image/loading.gif)
