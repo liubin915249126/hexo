@@ -6,7 +6,7 @@
 >
   用带箭头的虚线将两个位置不固定的div连接起来,初听到这个需求一头雾水，传统的div可以做直线，但斜起来不太好做，幸亏之前接触过svg,里面有一个line标签，知道起始中止两个点的位置，就可以将两个点连接起来了。
   至于箭头,可以这么做先定义箭头：
-  ```
+  ```js
         <svg>
             <defs>
                 <marker id="arrow" markerUnits="strokeWidth" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="6" refY="6" orient="auto">
@@ -16,7 +16,7 @@
         </svg>
   ```
   将箭头放在直线上：marker-end="url(#arrow)"
-  ```
+  ```js
      <line  x1="0" y1="0" x2="200" y2="50" stroke="#000" stroke-width="2" marker-end="url(#arrow)"stroke-dasharray="10,10"></line> 
   ```
 >
@@ -25,7 +25,7 @@
 
 >
   需要连接的两个div及SVG都相对于某一个div.wrap绝对定位，可以先求得两个div左上角相对与div.wrap坐标：
-  ```
+  ```js
         //获取元素左上角相对于某一元素的的位置
         function getElCoordinate(dom) {
                     var t = dom.offsetTop;
@@ -53,7 +53,7 @@
 
 >
   分为两种情况：终点div位于起点div上方,终点div位于起点div下方。
-```
+```js
    var pos1 = getElCoordinate($('.item1')[0])//起点div的位置
    var pos2 = getElCoordinate($('.item2')[0])//终点div的位置
    function getPos(pos1, pos2){
@@ -82,7 +82,7 @@
 #### 4.确定起止点位置后连线。
 
 >
-```
+```js
    function move(){
                var pos1 = getElCoordinate($('.item1')[0])
                var pos2 = getElCoordinate($('.item2')[0])
@@ -99,7 +99,7 @@
 #### 5.两个div分别拖动并保持线始终连接
 
 >
-```
+```js
              drag($('.item'), move)
              function drag(obj,callback) {
                 var dragEles = obj;

@@ -19,7 +19,7 @@ title: 我的博客
 >  
 #### 2.求一个元素左上角相对于屏幕的位置
 >
-```
+```js
            //获取元素相对于屏幕绝对位置
         function getAbsPosition(element){
            var abs={x:0,y:0}
@@ -54,7 +54,7 @@ title: 我的博客
           }
 ```
 此方法循环累加位置坐标，直到父元素为根元素。
-```
+```js
    function getCenterPosition(element){
           center={x:0,y:0}
           var leftTop=getAbsPosition(element[0])
@@ -70,7 +70,7 @@ title: 我的博客
 #### 3.计算鼠标与元素中心点的距离差，使元素转动
 >
 当鼠标在图片上移动时,实时计算鼠标与元素中心点的距离差，经过比例换算，修改元素的transform
-```
+```js
    $(document).on('mousemove','.layerWrap',function(e){
             //console.log(e.clientX,e.clientY)
             CenterPosition = getCenterPosition($('.layer img'))
